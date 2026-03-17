@@ -2,7 +2,7 @@ import React from "react";
 import MyPhoto from "../../src/assets/Studio.jpeg"; 
 function About() {
   return (
-    <section id="about" className="py-24 bg-gradient-to-r  via-pink-400 to-purple-700  min-h-screen">
+    <section id="about" className="py-24 bg-white/20 backdrop-blur-lg border border-white/20 shadow-lg min-h-screen">
       <div className="container mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
 
         {/* Image Section */}

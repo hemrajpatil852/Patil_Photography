@@ -63,7 +63,7 @@ function Contact() {
   };
 
   return (
-    <section id="contact" className="py-24 bg-gradient-to-r  via-pink-400 to-purple-700 ">
+    <section id="contact" className="py-24 bg-garay-50  min-h-screen">
       {/* Section Title */}
       <h2 className="text-4xl md:text-5xl text-center font-extrabold mb-16 text-black">
         Contact Us

@@ -1,7 +1,7 @@
 import React from "react";
 
 function WhatsAppButton() {
-  const phoneNumber = "9130603602"; // Your WhatsApp number without "+" or spaces
+  const phoneNumber = "8888086250"; // Your WhatsApp number without "+" or spaces
   const whatsappLink = `https://wa.me/${phoneNumber}`;
 
   return (

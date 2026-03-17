@@ -1,12 +1,15 @@
 import React, { useState, useEffect } from "react";
+import baground6 from "../assets/baground6.jpg";
+import baground1 from "../assets/baground1.jpg";
+import baground2 from "../assets/baground2.jpg";
 
 const images = [
-  "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=1600&q=80", // bride & groom
-  "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1600&q=80", // wedding ceremony
-  "https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=1600&q=80", // couple dance
-  "https://images.unsplash.com/photo-1492724441997-5dc865305da7?auto=format&fit=crop&w=1600&q=80", // wedding decor
-  "https://images.unsplash.com/photo-1544716278-e513176f20b5?auto=format&fit=crop&w=1600&q=80", // bride portrait
-  "https://images.unsplash.com/photo-1523506463435-07e1f5e5b1c1?auto=format&fit=crop&w=1600&q=80", // groom portrait
+  baground6, // bride & groom
+  baground1, // wedding ceremony
+  baground2, // couple dance
+  baground6, // wedding decor
+  baground1, // bride portrait
+  baground2, // groom portrait
 ];
 
 function Hero() {
@@ -46,9 +49,8 @@ function Hero() {
       {images.map((img, index) => (
         <div
           key={index}
-          className={`absolute top-0 left-0 w-full h-full transition-opacity duration-1000 ${
-            index === currentIndex ? "opacity-100" : "opacity-0"
-          }`}
+          className={`absolute top-0 left-0 w-full h-full transition-opacity duration-1000 ${index === currentIndex ? "opacity-100" : "opacity-0"
+            }`}
           style={{
             backgroundImage: `linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url(${img})`,
             backgroundSize: "cover",
@@ -58,7 +60,7 @@ function Hero() {
       ))}
 
       {/* Hero Content */}
-      <div className="relative z-10 text-center px-6 max-w-3xl animate-fadeIn">
+      <div className="relative z-10 text-center px-6 pt-40 sm:pt-52 md:pt-64 lg:pt-80 max-w-3xl mx-auto animate-fadeIn">
         <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold mb-6 tracking-wide leading-tight">
           Capture Your
           <span className="block bg-gradient-to-r from-yellow-400 via-pink-500 to-purple-500 bg-clip-text text-transparent">

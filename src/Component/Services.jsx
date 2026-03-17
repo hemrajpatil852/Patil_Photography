@@ -83,7 +83,7 @@ function Services() {
   ];
 
   return (
-    <section id="services" className="py-20  bg-gradient-to-r  via-pink-400 to-purple-700 ">
+    <section id="services" className="py-20">
       <h2 className="text-4xl md:text-5xl text-center bg-black font-extrabold mb-14 bg-clip-text text-transparent">
         Our Services
       </h2>
@@ -92,7 +92,7 @@ function Services() {
         {services.map((service, index) => (
           <div
             key={index}
-            className="bg-gray-200 rounded-2xl shadow-lg p-10 text-center transition-all duration-500 hover:-translate-y-3 hover:shadow-2xl group"
+            className="bg-white/20 backdrop-blur-lg border border-white/20 shadow-lg rounded-2xl shadow-lg p-10 text-center transition-all duration-500 hover:-translate-y-3 hover:shadow-2xl group"
           >
             <div className="transform  group-hover:scale-110 transition duration-500">
               {service.icon}
@@ -100,7 +100,7 @@ function Services() {
 
             <h3 className="text-xl font-bold mb-3">{service.title}</h3>
 
-            <p className="text-gray-600 text-sm leading-relaxed">
+            <p className="text-black text-sm leading-relaxed">
               {service.description}
             </p>
           </div>
