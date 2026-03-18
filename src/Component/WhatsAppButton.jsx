@@ -1,7 +1,7 @@
 import React from "react";
 
 function WhatsAppButton() {
-  const phoneNumber = "8888086250"; // Your WhatsApp number without "+" or spaces
+  const phoneNumber = "918888086250"; // Include country code (91 for India)
   const whatsappLink = `https://wa.me/${phoneNumber}`;
 
   return (
@@ -9,7 +9,7 @@ function WhatsAppButton() {
       href={whatsappLink}
       target="_blank"
       rel="noopener noreferrer"
-      className="fixed bottom-20 right-6 flex items-center gap-2 bg-gray-200 text-green-600 font-semibold px-6 py-3 rounded-full shadow-lg hover:shadow-xl transition-shadow z-50"
+      className="fixed bottom-15 right-6 flex items-center gap-2 bg-gray-200 text-green-600 font-semibold px-6 py-3 rounded-full shadow-lg hover:shadow-xl transition-shadow z-50"
       aria-label="Chat with us on WhatsApp"
     >
       <img

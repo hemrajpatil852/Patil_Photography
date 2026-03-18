@@ -1,4 +1,4 @@
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
 
 import Navbar from "./Component/Navbar.jsx";
 import Hero from "./Component/Hero.jsx";
@@ -30,6 +30,7 @@ function App() {
         /> */}
 
         {/* About Page */}
+        <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/home" element={<Home />} />
         <Route path="/gallery" element={<Gallery />} />

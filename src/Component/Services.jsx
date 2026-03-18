@@ -83,7 +83,7 @@ function Services() {
   ];
 
   return (
-    <section id="services" className="py-20">
+    <section id="services" className="py-25">
       <h2 className="text-4xl md:text-5xl text-center bg-black font-extrabold mb-14 bg-clip-text text-transparent">
         Our Services
       </h2>

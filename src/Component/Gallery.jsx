@@ -53,10 +53,10 @@ const stories = [
 
 function Stories() {
   return (
-    <section className="w-full min-h-screen bg-gradient-to-b from-sky-200 via-sky-50 to-white py-16 px-4 sm:px-8">
+    <section className="w-full min-h-screen bg-gradient-to-b from-sky-200 via-sky-50 to-white py-25 px-4 sm:px-8">
       <div className="max-w-[1850px] mx-auto">
 
-        <h2 className="text-4xl md:text-5xl text-center bg-black font-extrabold mb-14 bg-clip-text text-transparentmb-12">
+        <h2 className="text-4xl md:text-5xl text-center bg-black font-extrabold mb-10 bg-clip-text text-transparentmb-12">
           Wedding Stories
         </h2>
 
