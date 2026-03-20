@@ -1,7 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
 import MyPhoto from "../../src/assets/Studio.jpeg";
+import MyPhoto1 from "../../src/assets/MyPhoto1.png";
+import PatilPhotography from "../../src/assets/PatilPhotography.jpeg";
 
 function About() {
+  const images = [MyPhoto, MyPhoto1, PatilPhotography];
+  const [current, setCurrent] = useState(0);
+
+  const prevSlide = () => {
+    setCurrent((prev) => (prev === 0 ? images.length - 1 : prev - 1));
+  };
+
+  const nextSlide = () => {
+    setCurrent((prev) => (prev === images.length - 1 ? 0 : prev + 1));
+  };
+
   return (
     <section
       id="about"
@@ -10,25 +23,53 @@ function About() {
       <div className="container mx-auto px-4 sm:px-6 grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 items-center">
 
         {/* Image Section */}
-        <div className="relative">
+        <div className="relative ">
+
+          {/* Background Images (stacked) */}
+          {images.map((img, index) => {
+            if (index !== current) {
+              return (
+                <img
+                  key={index}
+                  src={img}
+                  alt="bg"
+                  className={`absolute top-0 left-0 w-full h-full object-cover rounded-2xl md:rounded-3xl shadow-xl transition-all duration-500
+            ${index < current ? "-rotate-7 scale-95 opacity-60" : "rotate-7 scale-95 opacity-60"}
+          `}
+                />
+              );
+            }
+            return null;
+          })}
+
+          {/* Main Image */}
           <img
-            src={MyPhoto}
+            src={images[current]}
             alt="Photographer"
-            className="rounded-2xl md:rounded-3xl shadow-2xl w-full object-cover max-h-[380px] sm:max-h-[450px] md:max-h-[520px]"
+            className="relative z-10 rounded-2xl md:rounded-3xl shadow-2xl w-full object-cover max-h-[380px] sm:max-h-[450px] md:max-h-[520px] transition duration-500"
           />
 
-          {/* Experience Card */}
-          <div className="absolute bottom-4 right-4 sm:bottom-6 sm:right-6 md:-bottom-8 md:-right-8 bg-yellow-400 text-black px-4 py-3 sm:px-6 sm:py-4 md:px-8 md:py-5 rounded-xl md:rounded-2xl shadow-xl border-2 md:border-4 border-white">
-            <h3 className="text-xl sm:text-2xl md:text-3xl font-extrabold">
-              8+
-            </h3>
-            <p className="text-xs sm:text-sm md:text-md font-semibold">
-              Years of Experience
-            </p>
-          </div>
+          {/* Frame Effect */}
+          <div className="absolute inset-0 rounded-3xl rotate-3 scale-105 z-0"></div>
+
+          {/* Left Arrow */}
+          <button
+            onClick={prevSlide}
+            className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 bg-black/50 text-white p-2 sm:p-3 rounded-full hover:bg-black transition z-20"
+          >
+            ❮
+          </button>
+
+          {/* Right Arrow */}
+          <button
+            onClick={nextSlide}
+            className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 bg-black/50 text-white p-2 sm:p-3 rounded-full hover:bg-black transition z-20"
+          >
+            ❯
+          </button>
         </div>
 
-        {/* Text Section */}
+        {/* Text Section (UNCHANGED) */}
         <div>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-6 md:mb-8 text-black">
             About Me
@@ -81,7 +122,6 @@ function About() {
                 Projects Completed
               </p>
             </div>
-
           </div>
         </div>
       </div>
