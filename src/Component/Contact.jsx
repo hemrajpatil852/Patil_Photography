@@ -134,7 +134,7 @@ function Contact() {
               <FaFacebookF />
             </a>
             <a
-              href="https://wa.me/919130600000"
+              href="https://wa.me/918888086250"
               target="_blank"
               rel="noreferrer"
               className="bg-green-500 text-white p-3 rounded-full hover:scale-110 transition"
