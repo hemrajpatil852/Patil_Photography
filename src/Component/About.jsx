@@ -25,16 +25,18 @@ function About() {
         {/* Image Section */}
         <div className="relative ">
 
-          {/* Background Images (stacked) */}
+          {/* Background Images (only next 2) */}
           {images.map((img, index) => {
-            if (index !== current) {
+            const diff = (index - current + images.length) % images.length;
+
+            if (diff === 1 || diff === 2) {
               return (
                 <img
                   key={index}
                   src={img}
                   alt="bg"
                   className={`absolute top-0 left-0 w-full h-full object-cover rounded-2xl md:rounded-3xl shadow-xl transition-all duration-500
-            ${index < current ? "-rotate-7 scale-95 opacity-60" : "rotate-7 scale-95 opacity-60"}
+          ${diff === 1 ? "rotate-7 scale-95 opacity-60 z-0" : "-rotate-7 scale-90 opacity-40 z-0"}
           `}
                 />
               );
@@ -46,13 +48,10 @@ function About() {
           <img
             src={images[current]}
             alt="Photographer"
-            className="relative z-10 rounded-2xl md:rounded-3xl shadow-2xl w-full object-cover max-h-[380px] sm:max-h-[450px] md:max-h-[520px] transition duration-500"
+            className="relative z-10 w-full h-full object-cover rounded-2xl md:rounded-3xl shadow-2xl transition duration-500"
           />
 
-          {/* Frame Effect */}
-          <div className="absolute inset-0 rounded-3xl rotate-3 scale-105 z-0"></div>
-
-          {/* Left Arrow */}
+          {/* Arrows */}
           <button
             onClick={prevSlide}
             className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 bg-black/50 text-white p-2 sm:p-3 rounded-full hover:bg-black transition z-20"
@@ -60,7 +59,6 @@ function About() {
             ❮
           </button>
 
-          {/* Right Arrow */}
           <button
             onClick={nextSlide}
             className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 bg-black/50 text-white p-2 sm:p-3 rounded-full hover:bg-black transition z-20"
