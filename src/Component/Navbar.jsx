@@ -1,22 +1,20 @@
 import React, { useState } from "react";
 import { HiMenu, HiX } from "react-icons/hi";
 import { Link } from "react-router-dom";
-
+import pp from "../assets/pp2.png";
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
     <nav className="fixed w-full top-0 z-50 bg-white/30 backdrop-blur-md shadow-md">
-      <div className="container mx-auto flex justify-between items-center p-4 md:px-10">
+      <div className="container mx-auto flex justify-between items-center p-1 md:px-10">
 
-        {/* Animated Gradient Heading */}
-        <h1
-          className="text-3xl md:text-4xl font-extrabold tracking-wide text-black"
-          style={{ fontFamily: "'Montserrat', sans-serif" }}
-        >
-          Patil Photography
-        </h1>
+          <img
+          src={pp}
+          alt="PP Logo"
+          className="h-12 md:h-15 w-auto object-contain"
+        />
 
         {/* Desktop Menu */}
         <ul className="hidden md:flex gap-10 text-black font-medium text-lg">
